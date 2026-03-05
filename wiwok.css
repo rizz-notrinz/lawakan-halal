@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --accent-color: #3498db;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar-container {
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.main-content {
+    padding: 60px 20px;
+    background-color: var(--bg-light);
+}
+
+.intro-section,
+.comedy-section {
+    background-color: var(--bg-white);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.intro-section h3,
+.comedy-section h3,
+.disclaimer-section h3 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.intro-section p {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+
+.comedy-card {
+    background: linear-gradient(to bottom, #f0fdf4, #ffffff);
+    border-left: 5px solid var(--primary-color);
+    padding: 30px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.comedy-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.comedy-card h4 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.comedy-text {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.9;
+    font-style: italic;
+    padding: 0;
+}
+
+
+.disclaimer-section {
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.disclaimer-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.disclaimer-btn:hover {
+    background-color: #2980b9;
+    transform: translateX(5px);
+}
+
+.disclaimer-btn.active {
+    background-color: var(--primary-color);
+}
+
+.btn-icon {
+    font-size: 12px;
+    transition: var(--transition);
+}
+
+.disclaimer-btn.active .btn-icon {
+    transform: rotate(180deg);
+}
+
+#disclaimer-panel {
+    display: none;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #fffacd;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 5px;
+    animation: slideDown 0.3s ease;
+}
+
+#disclaimer-panel p {
+    color: var(--text-dark);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.footer {
+    background: linear-gradient(135deg, var(--text-dark) 0%, #1a252f 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar .container {
+        flex-direction: row;
+        gap: 0;
+    }
+    
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+        background-color: var(--bg-white);
+        padding: 20px;
+        border-bottom: 2px solid var(--primary-color);
+        box-shadow: var(--shadow);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+    }
+
+    .nav-list.active {
+        max-height: 500px;
+        opacity: 1;
+    }
+    
+    .brand-name {
+        font-size: 20px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .intro-section,
+    .comedy-section,
+    .disclaimer-section {
+        padding: 25px;
+    }
+    
+    .intro-section h3,
+    .comedy-section h3,
+    .disclaimer-section h3 {
+        font-size: 22px;
+    }
+    
+    .comedy-text {
+        font-size: 14px;
+    }
+    
+    .disclaimer-btn {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+        background-color: var(--bg-white);
+        padding: 15px;
+        border-bottom: 2px solid var(--primary-color);
+        box-shadow: var(--shadow);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+    }
+
+    .nav-list.active {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+    }
+    
+    .logo-section {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .intro-section,
+    .comedy-section,
+    .disclaimer-section {
+        padding: 20px;
+    }
+    
+    .intro-section h3,
+    .comedy-section h3 {
+        font-size: 18px;
+    }
+    
+    .comedy-card h4 {
+        font-size: 18px;
+    }
+    
+    .comedy-text {
+        font-size: 13px;
+    }
+}
